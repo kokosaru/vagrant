@@ -1,14 +1,24 @@
 <h1>Books</h1>
+<table>
+	<head>
+		<tr>
+			<th>Title</th>
+			<th>Body</th>
+		</tr>
+	</head>
 <% @books.each do |book| %>
-	<p>Title</p>
-	<span><%= book.book_title %></span>
-	<p>body</p>
-	<span><%= book.book_body %></span>
-	<%= link_to "Show" ,book_path(book.id) %>
-	<%= link_to "Edit" ,edit_book_path(book.id) %>
-	<%= link_to "Destroy", book_path(book.id), method: :delete %>
+	<body>
+		<tr>
+			<td><%= book.book_title %></td>
+			<td><%= book.book_body %></td>
+	<td><%= link_to "Show" ,book_path(book.id) %></td>
+	<td><%= link_to "Edit" ,edit_book_path(book.id) %></td>
+	<td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-cofirm" => "Are you sure?" %></td>
+		</tr>
+		</body>
 <% end %>
-
+</table>
+<main>
 <h2>New book</h2>
 
 <%= form_for(@book) do |f| %>
@@ -21,6 +31,7 @@
 
 	<%= f.submit 'create Book' %>
 <% end %>
+</main>
 
 
 

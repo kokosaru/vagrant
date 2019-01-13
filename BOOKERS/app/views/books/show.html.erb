@@ -1,6 +1,10 @@
-<h2>Title:</h2>
-<%= @book.book_title %>
-<h2>Body:</h2>
-<%= @book.book_body %>
+<% if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+<p><b>Title:</b><%= @book.book_title %></p>
+<p><b>Body:</b><%= @book.book_body %></p>
 
 <%= link_to "Back" , new_book_path %>
+<%= link_to "Edit" , edit_book_path %>
