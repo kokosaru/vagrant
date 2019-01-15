@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  def top
+  def root
   end
 
   def show
